@@ -2,17 +2,29 @@ const userInput = document.getElementById ('userInput');
 
 let expression = '';
 
-function press(num) {
+const press = num => {
   expression += num;
   userInput.value = expression;
 }
 
-function equal() {
+const equal = () => {
   userInput.value = eval(expression);
   expression = '';
 }
 
-function erase() {
+const erase = () => {
   expression = '';
   userInput.value = expression;
 }
+
+/* Dark Mode */
+const chk = document.getElementById('chk');
+
+chk.addEventListener('change', () => {
+	document.body.classList.toggle('dark');
+  document.querySelector('.calculator').classList.toggle('dark');
+  document.querySelector('#userInput').classList.toggle('dark');
+  document.querySelectorAll('.btn').forEach((btn) => btn.classList.toggle('dark'));
+  document.querySelector('.btnEqual').classList.toggle('dark');
+  
+});
