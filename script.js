@@ -21,10 +21,9 @@ const erase = () => {
 const chk = document.getElementById('chk');
 
 chk.addEventListener('change', () => {
-	document.body.classList.toggle('dark');
+  document.body.classList.toggle('dark');
   document.querySelector('.calculator').classList.toggle('dark');
   document.querySelector('#userInput').classList.toggle('dark');
   document.querySelectorAll('.btn').forEach((btn) => btn.classList.toggle('dark'));
   document.querySelector('.btnEqual').classList.toggle('dark');
-  
 });
